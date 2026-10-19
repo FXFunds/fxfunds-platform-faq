@@ -2,9 +2,6 @@
 
 [![npm version](https://img.shields.io/npm/v/@fxfunds/platform-faq.svg)](https://www.npmjs.com/package/@fxfunds/platform-faq)
 [![PyPI version](https://img.shields.io/pypi/v/fxfunds-platform-faq.svg)](https://pypi.org/project/fxfunds-platform-faq/)
-[![Tests](https://github.com/FXFunds/fxfunds-platform-faq/actions/workflows/tests.yml/badge.svg)](https://github.com/FXFunds/fxfunds-platform-faq/actions/workflows/tests.yml)
-[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
-[![Content: CC BY 4.0](https://img.shields.io/badge/Content-CC%20BY%204.0-lightgrey.svg)](LICENSE-CONTENT)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23467990.svg)](https://doi.org/10.5281/zenodo.23467990)
 [![Docs](https://readthedocs.org/projects/fxfunds-platform-faq/badge/?version=latest)](https://fxfunds-platform-faq.readthedocs.io)
 
