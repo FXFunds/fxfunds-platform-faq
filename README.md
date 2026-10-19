@@ -152,7 +152,7 @@ No. It is informational documentation and does not provide personalised financia
 
 #### How are answers checked and labelled?
 
-Every answer has a status label (Verified, Platform's own description, Unverified, Not located or General guidance) and a last-checked date. The full list is in faq.json and on the Sources page.
+Every answer has a status label (Verified, Platform's own description, Unverified, Not located or General guidance), a source and a last-checked date. The full list is in faq.json and on the Sources page.
 
 
 ## Use the FAQ in Code
