@@ -5,7 +5,7 @@
 [![Tests](https://github.com/FXFunds/fxfunds-platform-faq/actions/workflows/tests.yml/badge.svg)](https://github.com/FXFunds/fxfunds-platform-faq/actions/workflows/tests.yml)
 [![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 [![Content: CC BY 4.0](https://img.shields.io/badge/Content-CC%20BY%204.0-lightgrey.svg)](LICENSE-CONTENT)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23467990.svg)](https://doi.org/10.5281/zenodo.23467990)
 [![Docs](https://readthedocs.org/projects/fxfunds-platform-faq/badge/?version=latest)](https://fxfunds-platform-faq.readthedocs.io)
 
 FXFunds Platform FAQ is a documentation repository that answers frequently asked questions about the FXFunds platform: its stated services, advertised market categories, payment methods, account considerations and risks. Every answer is labelled to show whether it was confirmed from an official FXFunds source, is the platform's own description, is unverified, could not be located, or is general guidance.
@@ -318,7 +318,7 @@ Contributions should improve clarity, accuracy and documentation quality. Platfo
 | PyPI | https://pypi.org/project/fxfunds-platform-faq/ |
 | Hugging Face | https://huggingface.co/datasets/FXFunds/platform-faq |
 | Kaggle | https://www.kaggle.com/datasets/fxfunds/platform-faq |
-| Zenodo | https://zenodo.org/records/XXXXXXX |
+| Zenodo | https://zenodo.org/records/23467990 |
 | Docs | https://fxfunds-platform-faq.readthedocs.io |
 | Quora | https://fxfunds.quora.com/ |
 | Pinterest | https://www.pinterest.com/fxfunds_1/ |
