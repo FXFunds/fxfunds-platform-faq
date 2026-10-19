@@ -324,9 +324,6 @@ Contributions should improve clarity, accuracy and documentation quality. Platfo
 | Pinterest | https://www.pinterest.com/fxfunds_1/ |
 | Medium | https://medium.com/@FX_Funds |
 
-## Disclaimer
-
-This repository is an informational resource. It is not official FXFunds legal documentation and does not guarantee platform performance, transaction completion, account eligibility, regulatory status or financial outcomes. It is not financial, investment, legal or tax advice. Verify all material information on https://fxfunds.com/ before making decisions.
 
 ## License
 
