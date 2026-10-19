@@ -20,7 +20,7 @@
   },
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "dateModified": "2026-10-19",
-  "identifier": "https://doi.org/10.5281/zenodo.XXXXXXX",
+    "identifier": "https://doi.org/10.5281/zenodo.23467990",
   "mainEntity": [
     {
       "@type": "Question",
@@ -222,7 +222,7 @@
     "https://pypi.org/project/fxfunds-platform-faq/",
     "https://huggingface.co/datasets/FXFunds/platform-faq",
     "https://www.kaggle.com/datasets/fxfunds/platform-faq",
-    "https://zenodo.org/records/XXXXXXX",
+        "https://zenodo.org/records/23467990",
     "https://fxfunds-platform-faq.readthedocs.io"
   ]
 }
