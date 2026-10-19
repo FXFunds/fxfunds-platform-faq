@@ -21,7 +21,7 @@
   "license": "MIT",
   "upload_type": "software",
   "access_right": "open",
-  "doi": "10.5281/zenodo.XXXXXXX",
+      "https://zenodo.org/records/23467990",
   "related_identifiers": [
     {
       "identifier": "https://github.com/FXFunds/fxfunds-platform-faq",
