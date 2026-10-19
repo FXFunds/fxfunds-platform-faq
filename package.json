@@ -1,0 +1,54 @@
+{
+  "name": "@fxfunds/platform-faq",
+  "version": "1.0.0",
+  "description": "FXFunds Platform FAQ as an offline library and CLI — search factual answers about the FXFunds platform, each labelled with its verification status, source and last-checked date.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "bin": {
+    "fxfunds-faq": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "fxfunds_platform_faq/faq.json",
+    "README.md",
+    "LICENSE",
+    "LICENSE-CONTENT"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "fxfunds",
+    "faq",
+    "trading-platform",
+    "forex",
+    "cryptocurrency",
+    "usdt",
+    "stablecoin",
+    "payments",
+    "risk-disclosure",
+    "cli",
+    "search",
+    "fintech"
+  ],
+  "author": "FXFunds",
+  "license": "MIT",
+  "homepage": "https://fxfunds.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FXFunds/fxfunds-platform-faq.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FXFunds/fxfunds-platform-faq/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
+  }
+}

@@ -1,0 +1,28 @@
+site_name: FXFunds Platform FAQ
+site_url: https://fxfunds-platform-faq.readthedocs.io
+site_description: "Factual FAQ and documentation resource covering FXFunds platform information, trading services, payment methods and risk considerations, with every answer labelled by how it was verified."
+site_author: FXFunds
+repo_url: https://github.com/FXFunds/fxfunds-platform-faq
+repo_name: FXFunds/fxfunds-platform-faq
+copyright: MIT License (code) · CC BY 4.0 (content) — FXFunds (https://fxfunds.com/)
+
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
+  - Platform Information: platform.md
+  - Trading and Markets: trading-and-markets.md
+  - Deposits and Withdrawals: deposits-and-withdrawals.md
+  - Cryptocurrency and Stablecoins: crypto-and-stablecoins.md
+  - Security and Risk: security-and-risk.md
+  - About This FAQ: about-this-faq.md
+  - Use the FAQ in code: packages.md
+  - Sources: sources.md
+  - Related repositories: related-repositories.md
+
+markdown_extensions:
+  - tables
+  - admonition
+  - toc:
+      permalink: true

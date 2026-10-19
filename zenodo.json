@@ -1,0 +1,72 @@
+{
+  "title": "FXFunds Platform FAQ",
+  "description": "Factual FAQ and documentation resource covering FXFunds platform information, trading services, payment methods and risk considerations, with every answer labelled by how it was verified. Built by FXFunds.",
+  "creators": [
+    {
+      "name": "FXFunds"
+    }
+  ],
+  "keywords": [
+    "FXFunds",
+    "FAQ",
+    "trading platform",
+    "forex",
+    "cryptocurrency",
+    "USDT",
+    "stablecoin payments",
+    "deposits",
+    "withdrawals",
+    "risk disclosure"
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "doi": "10.5281/zenodo.XXXXXXX",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/FXFunds/fxfunds-platform-faq",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://fxfunds.com/",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.23424646",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.23463811",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.23464782",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://www.npmjs.com/package/@fxfunds/platform-faq",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://pypi.org/project/fxfunds-platform-faq/",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://huggingface.co/datasets/FXFunds/platform-faq",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://www.kaggle.com/datasets/fxfunds/platform-faq",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
