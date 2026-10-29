@@ -1,23 +1,27 @@
-# Security and Risk
+# FXFunds Platform Security
 
-## What should users review before opening an account?
+## How Does FXFunds Approach Platform Security?
 
-Check who operates the platform and where, whether that company is authorised by a financial regulator (using the regulator's own register), the client agreement, risk disclosure, privacy notice, fees, and the conditions for withdrawing funds. If key documents are missing, treat that as a risk.
+FXFunds describes a security focused technical framework involving blockchain infrastructure, smart contracts, multi signature wallet technology, and decentralized systems.
 
-<sub>📘 General guidance · Source: General good practice · Last checked: 2026-10-19</sub>
+## Does FXFunds Use Smart Contracts?
 
-## How should users protect account credentials?
+FXFunds describes smart contracts as part of its blockchain focused platform model. Smart contracts are programs that execute predefined instructions on compatible blockchain networks.
 
-Use a unique, strong password and turn on two-factor authentication if available. Never share your password, one-time codes, wallet private keys or seed phrases with anyone, including people claiming to be support staff. Type fxfunds.com yourself instead of following links in unexpected messages.
+## What Is Multi Signature Wallet Security?
 
-<sub>📘 General guidance · Source: General good practice · Last checked: 2026-10-19</sub>
+Multi signature technology allows selected digital asset transactions to require authorization from multiple designated parties, supporting additional transaction controls.
 
-## Where can users find applicable risk disclosures?
+## Does FXFunds Use Blockchain Technology?
 
-Official risk disclosures should be provided on fxfunds.com or in your account. They were not located on publicly readable pages at the last check. The fxfunds-risk-disclosures repository explains the main risk categories and keeps a register of official documents as they are found.
+FXFunds describes blockchain based transactions, decentralized applications, and stablecoin infrastructure as central elements of its financial technology approach.
 
-<sub>❓ Not located · Source: Searched fxfunds.com and public web; no official page found · Last checked: 2026-10-19</sub>
+## Are FXFunds Customer Funds Secure?
+
+FXFunds describes several security related technologies. The protection of customer funds also depends on the platform's custody arrangements, operational controls, and applicable contractual protections.
+
+## Does FXFunds Have Security Audits?
+
+FXFunds references smart contract audits in its platform materials. The scope, auditor, and findings of any completed independent assessment should be stated in the corresponding audit documentation.
 
 ---
-
-Labels are explained on the [home page](index.md#how-to-read-the-labels). Official website: https://fxfunds.com/
