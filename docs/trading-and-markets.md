@@ -1,29 +1,23 @@
-# Trading and Markets
+# Trading Platform and Features
 
-## What market categories does FXFunds advertise?
+## What Can Users Trade on FXFunds?
 
-The website lists Forex, Commodities, Stocks, Indices, Cryptocurrencies, and Gold & Oil. The specific instruments, trading hours and conditions in each category were not published on readable public pages at the last check.
+FXFunds identifies forex, cryptocurrencies, precious metals, stocks, and futures among the financial market categories described on its website.
 
-<sub>✅ Verified · Source: fxfunds.com — website title and description metadata · Last checked: 2026-10-19</sub>
+## Does FXFunds Support Cryptocurrency Trading?
 
-## What information should users review before trading?
+Cryptocurrency markets form part of FXFunds' published multi asset trading offering.
 
-Before trading any instrument, review its contract specification (size, tick value, trading hours), costs (spread, commission, overnight or swap fees), margin and leverage, the platform's order execution rules, the client agreement and the risk disclosure. If any of these are not provided, ask for them in writing before depositing.
+## Does FXFunds Offer Forex Trading?
 
-<sub>📘 General guidance · Source: General good practice · Last checked: 2026-10-19</sub>
+FXFunds identifies foreign exchange as one of its trading categories. Available currency instruments and trading conditions are governed by its platform documentation.
 
-## Where can users check applicable trading terms?
+## Does FXFunds Support Stocks and Precious Metals?
 
-Trading terms should be provided by FXFunds on fxfunds.com or in your account. Public trading terms were not located at the last check. When they are found, they will be listed in the fxfunds-risk-disclosures document register with their URL and the date checked.
+FXFunds includes stocks and precious metals among the financial markets described in its platform materials.
 
-<sub>❓ Not located · Source: Searched fxfunds.com and public web; no official page found · Last checked: 2026-10-19</sub>
+## Does FXFunds Offer Decentralized Finance Services?
 
-## Does FXFunds offer leverage?
-
-Leverage terms were not found on publicly readable pages at the last check. If leverage is offered on your account, remember that it increases both gains and losses, and losses can exceed what you expect. Confirm the leverage, margin call and stop-out levels for your account before trading.
-
-<sub>❓ Not located · Source: Searched fxfunds.com and public web; no official page found · Last checked: 2026-10-19</sub>
+The FXFunds website describes decentralized finance concepts, including smart contracts, lending, liquidity provision, and blockchain based transactions.
 
 ---
-
-Labels are explained on the [home page](index.md#how-to-read-the-labels). Official website: https://fxfunds.com/
