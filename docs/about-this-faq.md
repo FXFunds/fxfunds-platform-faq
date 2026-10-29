@@ -1,23 +1,21 @@
-# About This FAQ
+## About This Repository FAQs
 
-## Does this FAQ guarantee that platform information is current?
+### What Is This Repository About?
 
-No. Each answer shows when it was last checked and how it was verified. Platform details can change at any time, so check current official documentation before relying on any answer.
+This repository provides general information about FXFunds, including its platform features, trading services, corporate information, and financial technology approach.
 
-<sub>✅ Verified · Source: This repository · Last checked: 2026-10-19</sub>
+### Why Was This Repository Created?
 
-## Is this repository financial advice?
+This repository was created to organize FXFunds related information in a structured format, making it easier for readers to understand the platform and its services.
 
-No. It is informational documentation and does not provide personalised financial, investment, legal or tax advice.
+### Who Can Use This Repository?
 
-<sub>✅ Verified · Source: This repository · Last checked: 2026-10-19</sub>
+Anyone interested in learning about FXFunds, its trading features, payment methods, and corporate background can explore the information provided in this repository.
 
-## How are answers checked and labelled?
+### What Information Does This Repository Cover?
 
-Every answer has a status label (Verified, Platform's own description, Unverified, Not located or General guidance), a source and a last-checked date. The full list is in faq.json and on the Sources page.
+This repository covers FXFunds FAQs, trading markets, platform security, regulatory information, deposits and withdrawals, blockchain technology, and customer support.
 
-<sub>✅ Verified · Source: This repository · Last checked: 2026-10-19</sub>
+### Is This Repository Officially Maintained by FXFunds?
 
----
-
-Labels are explained on the [home page](index.md#how-to-read-the-labels). Official website: https://fxfunds.com/
+This repository should not be considered an official FXFunds resource unless its ownership or authorization has been confirmed. For official company information, users can visit https://fxfunds.com/.
