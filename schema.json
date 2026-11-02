@@ -24,7 +24,7 @@
       ],
       "license": "https://opensource.org/licenses/MIT",
       "version": "2.0.0",
-      "identifier": "https://doi.org/10.5281/zenodo.23467990",
+      "identifier": "https://doi.org/10.5281/zenodo.23467989",
       "author": {
         "@id": "https://fxfunds.com/#organization"
       },
@@ -34,8 +34,8 @@
         "https://pypi.org/project/fxfunds-platform-faq/",
         "https://huggingface.co/datasets/FXFunds/platform-faq",
         "https://www.kaggle.com/datasets/fxfunds/platform-faq",
-        "https://zenodo.org/records/23467990",
-        "https://doi.org/10.5281/zenodo.23467990",
+        "https://zenodo.org/records/23467989",
+        "https://doi.org/10.5281/zenodo.23467989",
         "https://fxfunds-platform-faq.readthedocs.io",
         "https://fxfunds.github.io/fxfunds-platform-faq/"
       ]
@@ -49,7 +49,7 @@
       "creator": {
         "@id": "https://fxfunds.com/#organization"
       },
-      "identifier": "https://doi.org/10.5281/zenodo.23467990",
+      "identifier": "https://doi.org/10.5281/zenodo.23467989",
       "keywords": [
         "FXFunds",
         "FAQ",
@@ -71,8 +71,8 @@
         "https://pypi.org/project/fxfunds-platform-faq/",
         "https://huggingface.co/datasets/FXFunds/platform-faq",
         "https://www.kaggle.com/datasets/fxfunds/platform-faq",
-        "https://zenodo.org/records/23467990",
-        "https://doi.org/10.5281/zenodo.23467990",
+        "https://zenodo.org/records/23467989",
+        "https://doi.org/10.5281/zenodo.23467989",
         "https://fxfunds-platform-faq.readthedocs.io",
         "https://fxfunds.github.io/fxfunds-platform-faq/"
       ]
