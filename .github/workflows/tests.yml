@@ -1,31 +1,27 @@
-name: Tests
+name: tests
 
 on:
   push:
   pull_request:
-  workflow_dispatch:
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  python:
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
-          python-version: "3.11"
+          python-version: "3.12"
+      - run: pip install pytest .
+      - run: python tools/generate.py --check
+      - run: pytest -q
 
-      - uses: actions/setup-node@v4
+  node:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: "20"
-
-      - name: Build Node.js package
-        run: |
-          npm ci
-          npm run build
-
-      - name: Install Python package and test tools
-        run: pip install . pytest
-
-      - name: Run tests
-        run: pytest -v
+          node-version: "22"
+      - run: npm ci
+      - run: npm test
