@@ -1,8 +1,8 @@
-name: Heartbeat
+name: heartbeat
 
 on:
   schedule:
-    - cron: "0 9 * * *"
+    - cron: "17 6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -10,18 +10,13 @@ permissions:
 
 jobs:
   heartbeat:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Update heartbeat
-        run: |
-          echo "heartbeat: $(date -u +%Y-%m-%dT%H:%M:%SZ)" > heartbeat.txt
-
-      - name: Commit and push
-        run: |
+      - uses: actions/checkout@v5
+      - run: echo "FXFunds Platform FAQ — heartbeat run ${{ github.run_number }}" > heartbeat.txt
+      - run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           git add heartbeat.txt
-          git commit -m "chore: heartbeat $(date -u +%Y-%m-%d)" || echo "No changes"
+          git commit -m "heartbeat" || exit 0
           git push
