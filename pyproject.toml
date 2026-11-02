@@ -1,24 +1,20 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "fxfunds-platform-faq"
-version = "1.0.2"
-description = "FXFunds Platform FAQ as an offline library and CLI, with verification labels, sources and last-checked dates. Built by FXFunds."
+version = "2.0.0"
+description = "FXFunds Platform FAQ — searchable database of questions people ask about FXFunds: legitimacy, regulation, security, trading, deposits, withdrawals and more."
 readme = "README.md"
-requires-python = ">=3.9"
-license = { text = "MIT (code); CC-BY-4.0 (FAQ content)" }
+license = { text = "MIT" }
 authors = [{ name = "FXFunds" }]
-keywords = [
-  "fxfunds", "faq", "trading-platform", "forex", "cryptocurrency", "usdt",
-  "stablecoin", "payments", "risk-disclosure", "cli", "search", "fintech"
-]
+requires-python = ">=3.9"
+keywords = ["fxfunds", "faq", "fxfunds review", "regulation", "forex", "cryptocurrency", "stablecoin", "usdt"]
 classifiers = [
   "Programming Language :: Python :: 3",
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
-  "Intended Audience :: Developers",
   "Topic :: Office/Business :: Financial",
 ]
 
@@ -26,7 +22,7 @@ classifiers = [
 Homepage = "https://fxfunds.com/"
 Repository = "https://github.com/FXFunds/fxfunds-platform-faq"
 Documentation = "https://fxfunds-platform-faq.readthedocs.io"
-Issues = "https://github.com/FXFunds/fxfunds-platform-faq/issues"
+DOI = "https://doi.org/10.5281/zenodo.23467990"
 
 [project.scripts]
 fxfunds-faq = "fxfunds_platform_faq.__main__:main"
@@ -35,4 +31,4 @@ fxfunds-faq = "fxfunds_platform_faq.__main__:main"
 packages = ["fxfunds_platform_faq"]
 
 [tool.setuptools.package-data]
-fxfunds_platform_faq = ["faq.json"]
+fxfunds_platform_faq = ["*.json"]
