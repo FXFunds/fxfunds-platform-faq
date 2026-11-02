@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fxfunds-platform-faq"
-version = "1.0.0"
+version = "1.0.2"
 description = "FXFunds Platform FAQ as an offline library and CLI, with verification labels, sources and last-checked dates. Built by FXFunds."
 readme = "README.md"
 requires-python = ">=3.9"
