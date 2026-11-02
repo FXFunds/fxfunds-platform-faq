@@ -1,48 +1,82 @@
-"""Command-line interface: fxfunds-faq / python -m fxfunds_platform_faq"""
+"""Command-line interface: python -m fxfunds_platform_faq (or fxfunds-faq)."""
+
+import argparse
 import json
 import sys
 
-from . import FAQ, all_questions, by_category, by_status, categories, format_answer, get, search
+from . import all_questions, ask, by_category, categories, get, __version__
 
 
-def main(argv=None) -> None:
-    argv = list(sys.argv[1:] if argv is None else argv)
-    as_json = "--json" in argv
-    args = [a for a in argv if a != "--json"]
-    cmd, rest = (args[0], args[1:]) if args else (None, [])
+def _entry(e):
+    print(f"Q: {e['question']}")
+    print(f"A: {e['answer']}")
 
-    def out(items):
-        if as_json:
-            print(json.dumps(items, indent=2, ensure_ascii=False))
-        elif not items:
-            print("No matching questions.")
+
+def main(argv=None):
+    p = argparse.ArgumentParser(prog="fxfunds-faq", description="Ask questions about FXFunds.")
+    p.add_argument("--version", action="version", version=__version__)
+    sub = p.add_subparsers(dest="cmd")
+
+    a = sub.add_parser("ask", help="ask a question, e.g. ask is fxfunds legit")
+    a.add_argument("query", nargs="+")
+    a.add_argument("--limit", type=int, default=3)
+    a.add_argument("--json", action="store_true")
+
+    s = sub.add_parser("show", help="show one entry, e.g. show 7")
+    s.add_argument("id")
+    s.add_argument("--json", action="store_true")
+
+    l = sub.add_parser("list", help="list questions, optionally in one category")
+    l.add_argument("category", nargs="*")
+    l.add_argument("--json", action="store_true")
+
+    c = sub.add_parser("categories", help="list categories")
+    c.add_argument("--json", action="store_true")
+
+    args = p.parse_args(argv)
+    if not args.cmd:
+        p.print_help()
+        return 0
+
+    if args.cmd == "ask":
+        data = ask(" ".join(args.query), args.limit)
+        if args.json:
+            print(json.dumps(data, indent=2, ensure_ascii=False))
+        elif not data:
+            print("No matching question. Try other words, or run: fxfunds-faq list")
         else:
-            print("\n\n".join(format_answer(q) for q in items))
+            _entry(data[0])
+            if len(data) > 1:
+                print("\nAlso see:")
+                for e in data[1:]:
+                    print(f"  {e['id']}  {e['question']}")
+        return 0
 
-    if cmd == "search":
-        out(search(" ".join(rest)))
-    elif cmd == "category":
-        out(by_category(rest[0] if rest else ""))
-    elif cmd == "status":
-        out(by_status(rest[0] if rest else ""))
-    elif cmd == "show":
-        q = get(rest[0] if rest else "")
-        out([q] if q else [])
-    elif cmd == "all":
-        out(all_questions())
-    else:
-        print(f"\n{FAQ['title']} — {len(FAQ['questions'])} questions, last checked {FAQ['last_checked']}")
-        print("=" * 60)
-        for c in categories():
-            print(f"  {c['id']:<10} {c['name']} ({c['count']})")
-        print("\nUsage:")
-        print('  fxfunds-faq search "withdrawal fees"')
-        print("  fxfunds-faq category payments")
-        print("  fxfunds-faq status not-located")
-        print("  fxfunds-faq show faq-04")
-        print("  fxfunds-faq all [--json]")
-        print(f"\nInformational only, not financial advice. Official website: {FAQ['official_website']}\n")
+    if args.cmd == "show":
+        e = get(args.id)
+        if e is None:
+            print(f"No entry '{args.id}'", file=sys.stderr)
+            return 1
+        print(json.dumps(e, indent=2, ensure_ascii=False)) if args.json else _entry(e)
+        return 0
+
+    if args.cmd == "list":
+        data = by_category(" ".join(args.category)) if args.category else all_questions()
+        if args.json:
+            print(json.dumps(data, indent=2, ensure_ascii=False))
+        else:
+            current = None
+            for e in data:
+                if e["category"] != current:
+                    current = e["category"]
+                    print(f"\n{current}")
+                print(f"  {e['id']}  {e['question']}")
+        return 0
+
+    data = categories()
+    print(json.dumps(data, indent=2)) if args.json else print("\n".join(data))
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
