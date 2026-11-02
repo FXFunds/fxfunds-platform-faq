@@ -1,15 +1,14 @@
 {
   "name": "@fxfunds/platform-faq",
-  "version": "1.0.2",
-  "description": "FXFunds Platform FAQ as an offline library and CLI — search factual answers about the FXFunds platform, each labelled with its verification status, source and last-checked date.",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "version": "2.0.0",
+  "description": "FXFunds Platform FAQ — searchable database of questions people ask about FXFunds: legitimacy, regulation, security, trading, deposits, withdrawals and more.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "bin": {
-    "fxfunds-faq": "./index.js"
+    "fxfunds-faq": "dist/index.js"
   },
   "files": [
-    "index.js",
-    "index.d.ts",
+    "dist",
     "fxfunds_platform_faq/faq.json",
     "README.md",
     "LICENSE",
@@ -17,25 +16,21 @@
   ],
   "scripts": {
     "build": "tsc",
-    "start": "node index.js",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && node dist/index.js ask is fxfunds legit && node dist/index.js ask how long does withdrawal take"
   },
   "keywords": [
     "fxfunds",
     "faq",
-    "trading-platform",
+    "fxfunds-faq",
+    "fxfunds-review",
+    "regulation",
     "forex",
     "cryptocurrency",
-    "usdt",
     "stablecoin",
-    "payments",
-    "risk-disclosure",
-    "cli",
-    "search",
-    "fintech"
+    "usdt",
+    "search"
   ],
-  "author": "FXFunds",
-  "license": "MIT",
   "homepage": "https://fxfunds.com/",
   "repository": {
     "type": "git",
@@ -44,11 +39,13 @@
   "bugs": {
     "url": "https://github.com/FXFunds/fxfunds-platform-faq/issues"
   },
-  "engines": {
-    "node": ">=18"
+  "author": "FXFunds (https://fxfunds.com/)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
-    "typescript": "^5.4.0"
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
   }
 }
