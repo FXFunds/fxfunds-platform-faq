@@ -2,7 +2,10 @@
 
 All notable changes to this FAQ are recorded here.
 
-## [1.0.0] — 2026-10-19
+## [1.0.1] — 2026-11-02
+
+### Changed
+- Updated content and package metadata.
 
 ### Added
 - 24 questions across 6 topics: Platform Information, Trading and Markets, Deposits and Withdrawals, Cryptocurrency and Stablecoins, Security and Risk, About This FAQ.
