@@ -1,6 +1,6 @@
 {
   "name": "@fxfunds/platform-faq",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "FXFunds Platform FAQ as an offline library and CLI — search factual answers about the FXFunds platform, each labelled with its verification status, source and last-checked date.",
   "main": "index.js",
   "types": "index.d.ts",
