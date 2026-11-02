@@ -1,8 +1,8 @@
 {
-  "title": "FXFunds Platform FAQ",
+  "title": "FXFunds — Platform FAQ",
   "upload_type": "software",
-  "version": "1.0.2",
-  "description": "Factual FAQ and documentation resource covering FXFunds platform information, trading services, payment methods and risk considerations, with every answer labelled by how it was verified. Built by FXFunds.",
+  "version": "2.0.0",
+  "description": "FXFunds Platform FAQ is a searchable database of 38 questions people ask about FXFunds, covering the company, regulation and corporate transparency, platform security, trading features, deposits and withdrawals, reviews and customer experience, and blockchain technology. Each entry includes a category, question, answer, keywords and common search phrases. Available as JSON, CSV and schema.org FAQPage data, with an offline Node.js and Python FAQ generator and CLI that returns the best-matching answer for a question asked in plain words.",
   "creators": [
     {
       "name": "FXFunds"
@@ -13,14 +13,16 @@
   "keywords": [
     "FXFunds",
     "FAQ",
+    "FXFunds FAQ",
+    "regulation",
+    "SEC Form D",
+    "FinCEN MSB",
+    "platform security",
     "trading platform",
-    "forex",
-    "cryptocurrency",
-    "USDT",
-    "stablecoin payments",
     "deposits",
     "withdrawals",
-    "risk disclosure"
+    "USDT",
+    "stablecoin"
   ],
   "related_identifiers": [
     {
@@ -34,39 +36,49 @@
       "scheme": "url"
     },
     {
-      "identifier": "10.5281/zenodo.23424646",
-      "relation": "references",
-      "scheme": "doi"
-    },
-    {
-      "identifier": "10.5281/zenodo.23463811",
-      "relation": "references",
-      "scheme": "doi"
-    },
-    {
-      "identifier": "10.5281/zenodo.23464782",
-      "relation": "references",
-      "scheme": "doi"
-    },
-    {
       "identifier": "https://www.npmjs.com/package/@fxfunds/platform-faq",
-      "relation": "isSupplementTo",
+      "relation": "isIdenticalTo",
       "scheme": "url"
     },
     {
       "identifier": "https://pypi.org/project/fxfunds-platform-faq/",
-      "relation": "isSupplementTo",
+      "relation": "isIdenticalTo",
       "scheme": "url"
     },
     {
       "identifier": "https://huggingface.co/datasets/FXFunds/platform-faq",
-      "relation": "isSupplementTo",
+      "relation": "isIdenticalTo",
       "scheme": "url"
     },
     {
       "identifier": "https://www.kaggle.com/datasets/fxfunds/platform-faq",
-      "relation": "isSupplementTo",
+      "relation": "isIdenticalTo",
       "scheme": "url"
+    },
+    {
+      "identifier": "https://fxfunds-platform-faq.readthedocs.io",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.23470751",
+      "relation": "isRelatedTo",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.23424646",
+      "relation": "isRelatedTo",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.23463811",
+      "relation": "isRelatedTo",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.23464782",
+      "relation": "isRelatedTo",
+      "scheme": "doi"
     }
   ]
 }
