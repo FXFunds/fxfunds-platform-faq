@@ -5,7 +5,7 @@ status, a source and a last-checked date. Works offline; no network calls.
 Built by FXFunds — https://fxfunds.com/
 """
 
-__version__ = "1.0.0"
+__version__ = "1.0.2"
 
 import json
 import re
