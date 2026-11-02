@@ -1,23 +1,15 @@
 # Changelog
 
-All notable changes to this FAQ are recorded here.
+## 2.0.0
 
-## [1.0.2] — 2026-11-02
+Fresh rewrite.
 
-### Changed
-- Updated content and package metadata.
+- One FAQ database (`faq.json`) with 38 questions across seven categories: About FXFunds, Regulation and Corporate Transparency, FXFunds Platform Security, Trading Platform and Features, Deposits and Withdrawals, Reviews, Reputation and Customer Experience, Blockchain and Financial Technology.
+- Each entry has a category, question, answer, keywords and common search phrases.
+- FAQ generator: `ask` returns the best-matching answer for a question in plain words, plus related questions.
+- Node.js and Python packages with the `fxfunds-faq` CLI.
+- CSV dataset, docs page, README FAQ and schema.org FAQPage generated from the database.
 
-### Added
-- 24 questions across 6 topics: Platform Information, Trading and Markets, Deposits and Withdrawals, Cryptocurrency and Stablecoins, Security and Risk, About This FAQ.
-- Status labels, sources and last-checked dates for every answer.
-- `fxfunds_platform_faq/faq.json` (single source) and `schema.json` (schema.org FAQPage).
-- Node.js package `@fxfunds/platform-faq` and Python package `fxfunds-platform-faq` with search, filters and the `fxfunds-faq` CLI.
-- Dataset `dataset/fxfunds_platform_faq.csv` for Hugging Face and Kaggle, with a Kaggle notebook.
-- Consistency tests and GitHub Actions workflows for tests, npm and PyPI publishing.
-- Source register (`docs/sources.md`) and ReadTheDocs documentation.
-- Links to related FXFunds repositories.
+## 1.0.2 and earlier
 
-### Verification notes
-- Confirmed from fxfunds.com metadata: platform name, self-description and market categories.
-- Not located on public pages: operator, regulator, trading terms, leverage, fees, limits, processing times and risk disclosure.
-- USDT on TON, ERC20 and TRC20 is taken from FXFunds project materials and is labelled Unverified until confirmed on the official site.
+- Earlier FAQ format.
