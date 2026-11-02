@@ -22,7 +22,7 @@ classifiers = [
 Homepage = "https://fxfunds.com/"
 Repository = "https://github.com/FXFunds/fxfunds-platform-faq"
 Documentation = "https://fxfunds-platform-faq.readthedocs.io"
-DOI = "https://doi.org/10.5281/zenodo.23467990"
+DOI = "https://doi.org/10.5281/zenodo.23467989"
 
 [project.scripts]
 fxfunds-faq = "fxfunds_platform_faq.__main__:main"
