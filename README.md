@@ -4,7 +4,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/fxfunds-platform-faq.svg)](https://pypi.org/project/fxfunds-platform-faq/)
 [![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 [![Content: CC BY 4.0](https://img.shields.io/badge/Content-CC%20BY%204.0-lightgrey.svg)](LICENSE-CONTENT)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23467990.svg)](https://doi.org/10.5281/zenodo.23467990)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23467989.svg)](https://doi.org/10.5281/zenodo.23467989)
 [![Docs](https://readthedocs.org/projects/fxfunds-platform-faq/badge/?version=latest)](https://fxfunds-platform-faq.readthedocs.io)
 
 FXFunds Platform FAQ is a searchable database of the questions people ask about FXFunds. Ask a question in your own words — "is fxfunds legit", "how long does withdrawal take", "what can I trade" — and the FAQ generator returns the best-matching answer, along with related questions.
@@ -333,12 +333,15 @@ FXFunds · FXFunds FAQ · is FXFunds legit · FXFunds review · FXFunds regulati
 | PyPI | https://pypi.org/project/fxfunds-platform-faq/ |
 | Hugging Face | https://huggingface.co/datasets/FXFunds/platform-faq |
 | Kaggle | https://www.kaggle.com/datasets/fxfunds/platform-faq |
-| Zenodo | https://zenodo.org/records/23467990 |
+| Zenodo | https://zenodo.org/records/23467989 |
 | Docs | https://fxfunds-platform-faq.readthedocs.io |
 | Quora | https://fxfunds.quora.com/ |
 | Pinterest | https://www.pinterest.com/fxfunds_1/ |
 | Medium | https://medium.com/@FX_Funds |
 
+## Disclaimer
+
+This repository is an informational reference. It is not financial advice and not an endorsement of FXFunds. Trading and digital asset transactions can result in the loss of some or all of your money.
 
 ## License
 
