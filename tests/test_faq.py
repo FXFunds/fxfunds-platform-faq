@@ -1,90 +1,86 @@
-"""Consistency and behaviour tests for the FXFunds Platform FAQ.
-fxfunds_platform_faq/faq.json is the single source; everything else must match it."""
-import csv
+"""Database consistency and search behaviour tests."""
+
 import json
-import shutil
 import subprocess
 import sys
 from pathlib import Path
 
 import pytest
 
-import fxfunds_platform_faq as faq
+import fxfunds_platform_faq as fx
+from fxfunds_platform_faq.__main__ import main
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = json.loads((ROOT / "fxfunds_platform_faq" / "faq.json").read_text(encoding="utf-8"))
-QUESTIONS = DATA["questions"]
-STATUSES = set(DATA["status_labels"])
-CATEGORIES = {c["id"]: c["name"] for c in DATA["categories"]}
-PAGES = {
-    "platform": "platform.md", "trading": "trading-and-markets.md", "payments": "deposits-and-withdrawals.md",
-    "crypto": "crypto-and-stablecoins.md", "security": "security-and-risk.md", "about": "about-this-faq.md",
-}
-QUERIES = ["withdrawal fees", "network", "regulated", "leverage", "USDT confirmations", "password security", "xyz"]
 
 
-def test_faq_structure():
-    ids = [q["id"] for q in QUESTIONS]
-    assert len(ids) == len(set(ids)) == 24
-    for q in QUESTIONS:
-        assert q["status"] in STATUSES, q["id"]
-        assert q["category"] in CATEGORIES, q["id"]
-        assert q["question"].endswith("?"), q["id"]
-        assert q["answer"] and q["source"] and q["last_checked"], q["id"]
+def test_generated_files_up_to_date():
+    r = subprocess.run([sys.executable, str(ROOT / "tools/generate.py"), "--check"], capture_output=True, text=True)
+    assert r.returncode == 0, r.stdout + r.stderr
 
 
-def test_csv_matches_json():
-    with open(ROOT / "dataset" / "fxfunds_platform_faq.csv", newline="", encoding="utf-8") as f:
-        rows = list(csv.DictReader(f))
-    assert len(rows) == len(QUESTIONS)
-    for row, q in zip(rows, QUESTIONS):
-        for key in ("id", "category", "question", "answer", "status", "source", "last_checked"):
-            assert row[key] == q[key], (q["id"], key)
-        assert row["category_name"] == CATEGORIES[q["category"]]
-        assert row["status_label"] == DATA["status_labels"][q["status"]]["label"]
+def test_database_shape():
+    entries = fx.all_questions()
+    assert [e["id"] for e in entries] == [f"FAQ-{i:02d}" for i in range(1, 39)]
+    for e in entries:
+        assert set(e) == {"id", "category", "question", "answer", "keywords", "searches"}
+        assert e["question"].endswith("?") and e["answer"]
+        assert e["keywords"] and e["searches"]
+        assert all(s == s.lower() for s in e["searches"])
+    assert len(fx.categories()) == 7
+    questions = [e["question"] for e in entries]
+    assert len(set(questions)) == len(questions)
 
 
-def test_structured_data_matches_json():
-    schema = json.loads((ROOT / "schema.json").read_text(encoding="utf-8"))
-    assert schema["@type"] == "FAQPage"
-    pairs = [(e["name"], e["acceptedAnswer"]["text"]) for e in schema["mainEntity"]]
-    assert pairs == [(q["question"], q["answer"]) for q in QUESTIONS]
+def test_search_phrases_find_their_entry():
+    for e in fx.all_questions():
+        for s in e["searches"]:
+            assert fx.ask(s)[0]["id"] == e["id"], f"{s!r} did not return {e['id']}"
 
 
-def test_readme_and_docs_contain_every_answer():
+@pytest.mark.parametrize("query, expected", [
+    ("is fxfunds legit", "FAQ-02"),
+    ("Is FXFunds a scam?", "FAQ-02"),
+    ("how long does withdrawal take", "FAQ-26"),
+    ("SEC", "FAQ-07"),
+    ("is my money safe", "FAQ-16"),
+    ("trc20", "FAQ-35"),
+    ("customer support", "FAQ-31"),
+    ("what is fxfunds", "FAQ-01"),
+    ("is it regulated", "FAQ-09"),
+    ("how to deposit", "FAQ-23"),
+    ("bitcoin", "FAQ-19"),
+    ("fake recruitment message", "FAQ-32"),
+])
+def test_ask(query, expected):
+    assert fx.ask(query)[0]["id"] == expected
+
+
+def test_ask_no_match_and_limit():
+    assert fx.ask("xyzzy") == []
+    assert fx.ask("") == []
+    assert len(fx.ask("withdrawal", limit=2)) == 2
+
+
+def test_get_and_categories():
+    assert fx.get("7")["id"] == "FAQ-07"
+    assert fx.get("faq-23")["id"] == "FAQ-23"
+    assert fx.get("99") is None
+    assert len(fx.by_category("security")) == 6
+
+
+def test_faq_text_numbered_in_readme():
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    for q in QUESTIONS:
-        assert q["question"] in readme and q["answer"] in readme, q["id"]
-        page = (ROOT / "docs" / PAGES[q["category"]]).read_text(encoding="utf-8")
-        assert q["question"] in page and q["answer"] in page, q["id"]
+    for e in fx.all_questions():
+        n = int(e["id"].split("-")[1])
+        assert f"**{n}. {e['question']}**" in readme
+        assert e["answer"] in readme
 
 
-def test_python_api():
-    assert len(faq.all_questions()) == 24
-    assert sum(c["count"] for c in faq.categories()) == 24
-    assert faq.get("faq-04")["status"] == "not-located"
-    assert faq.get("nope") is None
-    assert {q["id"] for q in faq.by_status("unverified")} == {"faq-10", "faq-15"}
-    assert faq.search("withdrawal fees")[0]["id"] == "faq-11"
-    assert faq.search("the and of") == []
-    assert "last checked" in faq.format_answer(faq.get("faq-01"))
-
-
-def test_python_cli():
-    out = subprocess.run([sys.executable, "-m", "fxfunds_platform_faq", "show", "faq-04", "--json"],
-                         capture_output=True, text=True, check=True).stdout
-    assert json.loads(out)[0]["id"] == "faq-04"
-
-
-@pytest.mark.skipif(shutil.which("node") is None or not (ROOT / "index.js").exists(),
-                    reason="Build the Node.js package first: npm ci && npm run build")
-def test_node_matches_python():
-    script = ("const f=require('./index.js');const qs=JSON.parse(process.argv[1]);"
-              "console.log(JSON.stringify({search:qs.map(q=>f.search(q).map(x=>x.id)),"
-              "cats:f.categories().map(c=>[c.id,c.count]),unverified:f.byStatus('unverified').map(q=>q.id)}))")
-    out = subprocess.run(["node", "-e", script, json.dumps(QUERIES)], cwd=ROOT,
-                         capture_output=True, text=True, check=True).stdout
-    node = json.loads(out)
-    assert node["search"] == [[q["id"] for q in faq.search(s)] for s in QUERIES]
-    assert node["cats"] == [[c["id"], c["count"]] for c in faq.categories()]
-    assert node["unverified"] == [q["id"] for q in faq.by_status("unverified")]
+def test_cli(capsys):
+    assert main(["ask", "is", "fxfunds", "legit"]) == 0
+    assert "Q: Is FXFunds a legitimate company?" in capsys.readouterr().out
+    assert main(["show", "7", "--json"]) == 0
+    assert json.loads(capsys.readouterr().out)["id"] == "FAQ-07"
+    assert main(["ask", "xyzzy"]) == 0
+    assert "No matching question" in capsys.readouterr().out
+    assert main(["show", "99"]) == 1
