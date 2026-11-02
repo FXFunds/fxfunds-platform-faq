@@ -2,7 +2,7 @@
 
 All notable changes to this FAQ are recorded here.
 
-## [1.0.1] — 2026-11-02
+## [1.0.2] — 2026-11-02
 
 ### Changed
 - Updated content and package metadata.
